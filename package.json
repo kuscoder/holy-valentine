@@ -1,0 +1,9 @@
+{
+   "name": "holy-valentine",
+   "description": "An entertainment project for Valentine's Day",
+   "keywords": [],
+   "version": "1.0.0",
+   "license": "ISC",
+   "author": "Nikita Kus <kuscoder@yandex.ru>",
+   "main": "index.js"
+}
