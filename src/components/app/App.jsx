@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { ToastContainer, Flip } from 'react-toastify'
 
+import 'react-toastify/dist/ReactToastify.css'
 import '@styles/fonts.scss'
 import '@styles/normalize.scss'
 import '@styles/main.scss'
@@ -18,5 +20,12 @@ export const App = () => (
             <Route path="*" element={<Navigate to="/" replace={true} />} />
          </Route>
       </Routes>
+
+      <ToastContainer
+         theme="light"
+         limit={7}
+         autoClose={5000}
+         transition={Flip}
+      />
    </BrowserRouter>
 )
