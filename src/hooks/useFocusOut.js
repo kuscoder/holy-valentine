@@ -17,7 +17,7 @@ export function useFocusOut(focus, callback) {
          document.removeEventListener('click', onOutAction)
          document.removeEventListener('focusin', onOutAction)
       }
-   }, [focus])
+   }, [focus]) // eslint-disable-line
 
    return element
 }

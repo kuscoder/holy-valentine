@@ -16,6 +16,7 @@ export const Layout = () => {
             <a
                href="https://github.com/kuscoder"
                target="_blank"
+               rel="noreferrer"
             >
                {locales.developer}
             </a>
