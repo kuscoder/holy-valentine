@@ -1,0 +1,126 @@
+@use '@styles/master';
+
+.select {
+   position: relative;
+   min-width: 180px;
+   width: 100%;
+
+   font-size: 16px;
+   font-weight: 300;
+   color: #{master.$accent};
+}
+
+.target {
+   display: grid;
+   gap: 4px;
+
+   p {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      white-space: nowrap;
+      font-weight: 500;
+      font-size: 16px;
+
+      span {
+         font-weight: 300;
+         font-size: 14px;
+         color: #{master.$secondary};
+      }
+   }
+}
+
+.value {
+   cursor: pointer;
+   user-select: none;
+
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+   padding: 8px 12px;
+   width: 100%;
+   height: 40px;
+   text-align: left;
+
+   border-radius: 6px;
+   border: 1px solid #{master.$secondary};
+   background-color: #{master.$default};
+
+   span.placeholder {
+      color: #{master.$secondary};
+   }
+
+   img {
+      width: 13px;
+      height: auto;
+      transition: transform 0.2s;
+   }
+}
+
+.options {
+   position: absolute;
+   top: 65px + 6px;
+   left: 0;
+
+   padding: 6px 0;
+   width: 100%;
+   max-height: 172px;
+
+   border-radius: 6px;
+   border: 1px solid #{master.$secondary};
+   background-color: #{master.$default};
+
+   li {
+      user-select: none;
+      list-style: none;
+   }
+}
+
+.option {
+   button {
+      display: flex;
+      align-items: center;
+      justify-self: flex-start;
+
+      padding: 10px 15px;
+      width: 100%;
+      height: 43px;
+
+      background-color: #{master.$default};
+      transition: background-color 0.2s;
+
+      span {
+         padding: 0 5px;
+         border-radius: 6px;
+      }
+
+      &:focus-visible,
+      &:hover {
+         background-color: #{master.$secondary};
+      }
+   }
+
+   &:not(:last-child) button {
+      border-bottom: 1px solid #{master.$secondary};
+   }
+}
+
+.empty {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 40px;
+   color: #{master.$secondary};
+}
+
+.focus {
+   .value {
+      border-color: #{master.$accent};
+
+      img {
+         transform: rotate(180deg);
+      }
+   }
+}
