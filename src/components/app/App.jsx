@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { ToastContainer, Flip } from 'react-toastify'
 
 import 'react-toastify/dist/ReactToastify.css'
@@ -12,7 +12,7 @@ import Create from '@pages/Create'
 
 //prettier-ignore
 export const App = () => (
-   <BrowserRouter>
+   <HashRouter>
       <Routes>
          <Route path="/" element={<Layout />}>
             <Route index={true} element={<Home />} />
@@ -27,5 +27,5 @@ export const App = () => (
          autoClose={5000}
          transition={Flip}
       />
-   </BrowserRouter>
+   </HashRouter>
 )

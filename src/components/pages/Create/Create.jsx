@@ -27,7 +27,7 @@ const Create = () => {
       e.preventDefault()
 
       const title = locales.share_title
-      const url = window.location.origin + '?' + new URLSearchParams(form)
+      const url = window.location.origin + '#?' + new URLSearchParams(form)
 
       share({
          title,
