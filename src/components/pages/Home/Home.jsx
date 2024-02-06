@@ -16,15 +16,15 @@ import css from './Home.module.scss'
 const Home = () => {
    const [search] = useSearchParams()
    const { width, height } = useWindowSize()
-   const locales = useLocales()
+   const [locales] = useLocales()
 
    const [noPressCount, setNoPressCount] = useState(0)
    const [proposalStatus, setProposalStatus] = useState(null)
 
    const name = search.get('name') || null
-   const proposalImg = search.get('proposal_img') || defaultProposalImg
-   const consentImg = search.get('consent_img') || defaultConsentImg
-   const dissentImg = search.get('dissent_img') || defaultDissentImg
+   const proposalImg = search.get('proposal') || defaultProposalImg
+   const consentImg = search.get('consent') || defaultConsentImg
+   const dissentImg = search.get('dissent') || defaultDissentImg
    const yesButtonFontSize = Math.min(noPressCount, 15) * 1 + 1.5
 
    useEffect(() => {
