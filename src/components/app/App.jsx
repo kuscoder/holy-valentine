@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import '@styles/fonts.scss'
 import '@styles/normalize.scss'
 import '@styles/main.scss'
-import '@styles/common.scss'
 
 import { Layout } from './Layout'
 import Home from '@pages/Home'

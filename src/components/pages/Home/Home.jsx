@@ -45,71 +45,65 @@ const Home = () => {
       return phrases[index]
    }
 
-   if (proposalStatus === true)
-      return (
-         <main className={css.home}>
-            <section className={css.container}>
-               <div className={css.image}>
-                  <img src={consentImg} />
-               </div>
-               <p>{locales.consent}</p>
-            </section>
+   return (
+      <main className={css.home}>
+         {proposalStatus === true ? (
+            <>
+               <section className={css.container}>
+                  <div className={css.image}>
+                     <img src={consentImg} />
+                  </div>
+                  <p>{locales.consent}</p>
+               </section>
 
-            <Confetti
-               width={width}
-               height={height}
-            />
-         </main>
-      )
-
-   if (proposalStatus === false)
-      return (
-         <main className={css.home}>
+               <Confetti
+                  width={width}
+                  height={height}
+               />
+            </>
+         ) : proposalStatus === false ? (
             <section className={css.container}>
                <div className={css.image}>
                   <img src={dissentImg} />
                </div>
                <p>{locales.dissent}</p>
             </section>
-         </main>
-      )
+         ) : (
+            <section className={css.container}>
+               <div className={css.title}>
+                  <div className={css.image}>
+                     <img src={proposalImg} />
+                  </div>
 
-   return (
-      <main className={css.home}>
-         <section className={css.container}>
-            <header className={css.header}>
-               <div className={css.image}>
-                  <img src={proposalImg} />
+                  <h1>
+                     {name ? (
+                        <>
+                           <span>{ucFirst(name)}</span>, {locales.proposal}
+                        </>
+                     ) : (
+                        ucFirst(locales.proposal)
+                     )}
+                  </h1>
                </div>
 
-               <h1>
-                  {name ? (
-                     <>
-                        <span>{ucFirst(name)}</span>, {locales.proposal}
-                     </>
-                  ) : (
-                     ucFirst(locales.proposal)
-                  )}
-               </h1>
-            </header>
+               <div className={css.buttons}>
+                  <Button
+                     className={css.yes}
+                     label={locales.yes_button}
+                     theme="success"
+                     style={{ fontSize: `max(${yesButtonFontSize}vmax, 18px)` }}
+                     onClick={handleYesClick}
+                  />
 
-            <footer className={css.buttons}>
-               <Button
-                  className={css.yes}
-                  label={locales.yes_button}
-                  theme="success"
-                  style={{ fontSize: `max(${yesButtonFontSize}vmax, 18px)` }}
-                  onClick={handleYesClick}
-               />
-
-               <Button
-                  className={css.no}
-                  label={getNoButtonText()}
-                  theme="dangerous"
-                  onClick={handleNoClick}
-               />
-            </footer>
-         </section>
+                  <Button
+                     className={css.no}
+                     label={getNoButtonText()}
+                     theme="dangerous"
+                     onClick={handleNoClick}
+                  />
+               </div>
+            </section>
+         )}
       </main>
    )
 }

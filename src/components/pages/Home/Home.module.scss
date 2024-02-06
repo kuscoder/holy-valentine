@@ -2,7 +2,7 @@
    display: flex;
    align-items: center;
    justify-content: center;
-   height: 100vh;
+   height: 100%;
 }
 
 .image {
@@ -27,7 +27,7 @@
    }
 }
 
-.header {
+.title {
    display: flex;
    align-items: center;
    justify-content: center;
@@ -50,7 +50,7 @@
    .yes,
    .no {
       white-space: nowrap;
-      font-size: max(1.5vmax, 18px);
+      font-size: max(1.5vmax, 20px);
    }
 
    .yes {

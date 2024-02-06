@@ -1,0 +1,23 @@
+@use '@styles/master';
+
+.footer {
+   position: absolute;
+   right: 40px;
+   bottom: 30px;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 20px;
+
+   font-family: 'Kreon', serif;
+
+   a {
+      white-space: nowrap;
+      color: #{master.$secondary};
+
+      &:hover {
+         text-decoration: underline;
+      }
+   }
+}
