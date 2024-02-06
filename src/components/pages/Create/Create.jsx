@@ -54,7 +54,7 @@ const Create = () => {
             <Input
                label={locales.create_name}
                placeholder={locales.create_name_example}
-               optional={true}
+               optional={locales.optional}
                value={form.name}
                onChange={e => setForm(state => ({ ...state, name: e.target.value }))}
             />
@@ -62,7 +62,7 @@ const Create = () => {
             <Input
                label={locales.create_proposal}
                placeholder={locales.create_proposal_example}
-               optional={true}
+               optional={locales.optional}
                value={form.proposal}
                onChange={e => setForm(state => ({ ...state, proposal: e.target.value }))}
             />
@@ -70,7 +70,7 @@ const Create = () => {
             <Input
                label={locales.create_consent}
                placeholder={locales.create_consent_example}
-               optional={true}
+               optional={locales.optional}
                value={form.consent}
                onChange={e => setForm(state => ({ ...state, consent: e.target.value }))}
             />
@@ -78,6 +78,7 @@ const Create = () => {
             <Input
                label={locales.create_dissent}
                placeholder={locales.create_dissent_example}
+               optional={locales.optional}
                value={form.dissent}
                onChange={e => setForm(state => ({ ...state, dissent: e.target.value }))}
             />

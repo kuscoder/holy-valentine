@@ -1,4 +1,5 @@
 {
+   "optional": "opt.",
    "share_title": "Valentine card",
    "copy_success": "The link to the valentine has been successfully copied, share it with your loved one",
    "copy_error": "The link to the valentine card could not be copied. Now we will try to open a dialog in which you can copy the link manually",

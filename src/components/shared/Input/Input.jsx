@@ -5,7 +5,7 @@ export const Input = ({ className, label, optional, ...props }) => {
    return (
       <label className={classNames(className, css.input)}>
          <p>
-            {label} {optional && <span>(опц.)</span>}
+            {label} {optional && <span>({optional})</span>}
          </p>
 
          <input {...props} />

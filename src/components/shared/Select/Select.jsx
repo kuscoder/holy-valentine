@@ -24,7 +24,7 @@ export const Select = ({ className, label, optional, placeholder, textIsEmpty, v
       >
          <label className={css.target}>
             <p>
-               {label} {optional && <span>(опц.)</span>}
+               {label} {optional && <span>({optional})</span>}
             </p>
 
             <button
