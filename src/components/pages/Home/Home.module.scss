@@ -1,0 +1,63 @@
+.home {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100vh;
+}
+
+.image {
+   overflow: hidden;
+   width: 250px;
+
+   img {
+      width: 100%;
+      height: auto;
+   }
+}
+
+.container {
+   display: grid;
+   gap: 10px;
+   margin-bottom: 200px;
+
+   &.proposal {
+   }
+   &.consent {
+   }
+   &.dissent {
+   }
+}
+
+.header {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+
+   h1 {
+      text-align: center;
+      font-size: 38px;
+      font-weight: 400;
+   }
+}
+
+.buttons {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
+   gap: 5px;
+
+   .yes,
+   .no {
+      white-space: nowrap;
+      font-size: max(1.5vmax, 18px);
+   }
+
+   .yes {
+      transition: font-size 0.2s;
+   }
+
+   .no {
+   }
+}

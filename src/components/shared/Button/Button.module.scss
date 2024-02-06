@@ -1,0 +1,29 @@
+@use '@styles/master';
+
+.button {
+   cursor: pointer;
+
+   line-height: 1;
+   font-size: 22px;
+   font-weight: 400;
+
+   padding: 0.4em 0.7em;
+   border-radius: 6px;
+   transition: box-shadow 0.2s;
+
+   &:focus-visible {
+      position: relative;
+      z-index: 1;
+      box-shadow: 0px 0px 0px 2px #{master.$background}, 0px 0px 0px 4px #{master.$accent};
+   }
+}
+
+.success {
+   color: #{master.$default};
+   background-color: #{master.$success};
+}
+
+.dangerous {
+   color: #{master.$default};
+   background-color: #{master.$dangerous};
+}
