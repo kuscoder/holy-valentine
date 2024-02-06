@@ -91,7 +91,7 @@ const Home = () => {
                      className={css.yes}
                      label={locales.yes_button}
                      theme="success"
-                     style={{ fontSize: `max(${yesButtonFontSize}vmax, 18px)` }}
+                     style={{ fontSize: `max(${yesButtonFontSize}vmax, 20px)` }}
                      onClick={handleYesClick}
                   />
 
