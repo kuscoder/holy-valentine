@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { useWindowSize } from 'react-use'
 import Confetti from 'react-confetti'
 
-import { classNames } from '@utils/classNames'
 import { ucFirst } from '@utils/ucFirst'
-
-import { useParam } from '@hooks/useParam'
 import { useLocales } from '@hooks/useLocales'
 import { Button } from '@shared/Button'
 
@@ -16,16 +14,17 @@ import defaultDissentImg from '/default-dissent.gif'
 import css from './Home.module.scss'
 
 const Home = () => {
-   const name = useParam('name', null)
-   const proposalImg = useParam('proposalImg', defaultProposalImg)
-   const consentImg = useParam('consentImg', defaultConsentImg)
-   const dissentImg = useParam('dissentImg', defaultDissentImg)
-
+   const [search] = useSearchParams()
    const { width, height } = useWindowSize()
    const locales = useLocales()
 
    const [noPressCount, setNoPressCount] = useState(0)
    const [proposalStatus, setProposalStatus] = useState(null)
+
+   const name = search.get('name') || null
+   const proposalImg = search.get('proposal_img') || defaultProposalImg
+   const consentImg = search.get('consent_img') || defaultConsentImg
+   const dissentImg = search.get('dissent_img') || defaultDissentImg
    const yesButtonFontSize = Math.min(noPressCount, 15) * 1 + 1.5
 
    useEffect(() => {
@@ -49,7 +48,7 @@ const Home = () => {
    if (proposalStatus === true)
       return (
          <main className={css.home}>
-            <section className={classNames(css.container, css.consent)}>
+            <section className={css.container}>
                <div className={css.image}>
                   <img src={consentImg} />
                </div>
@@ -66,7 +65,7 @@ const Home = () => {
    if (proposalStatus === false)
       return (
          <main className={css.home}>
-            <section className={classNames(css.container, css.dissent)}>
+            <section className={css.container}>
                <div className={css.image}>
                   <img src={dissentImg} />
                </div>
@@ -77,7 +76,7 @@ const Home = () => {
 
    return (
       <main className={css.home}>
-         <section className={classNames(css.container, css.proposal)}>
+         <section className={css.container}>
             <header className={css.header}>
                <div className={css.image}>
                   <img src={proposalImg} />
