@@ -8,7 +8,7 @@
    display: flex;
    align-items: center;
    justify-content: center;
-   gap: 20px;
+   gap: 10px;
 
    font-family: 'Kreon', serif;
 
@@ -16,8 +16,17 @@
       white-space: nowrap;
       color: #{master.$secondary};
 
+      padding: 5px;
+      border-radius: 6px;
+      background-color: #{master.$background};
+      transition: box-shadow 0.2s;
+
       &:hover {
          text-decoration: underline;
+      }
+
+      &:focus-visible {
+         box-shadow: 0px 0px 0px 2px #{master.$background}, 0px 0px 0px 4px #{master.$accent};
       }
    }
 }
