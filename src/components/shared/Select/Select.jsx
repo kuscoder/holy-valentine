@@ -17,6 +17,8 @@ export const Select = ({ className, label, optional, placeholder, textIsEmpty, v
       setValue(value)
    }
 
+   const visibleValue = options.find(option => option.value === value)?.label
+
    return (
       <div
          className={classNames(className, css.select, { [css.focus]: focus })}
@@ -30,9 +32,10 @@ export const Select = ({ className, label, optional, placeholder, textIsEmpty, v
             <button
                className={classNames('focus-accent', css.value)}
                onFocus={() => setFocus(true)}
+               onClick={() => setFocus(true)}
                type="button"
             >
-               <span className={classNames({ [css.placeholder]: !value })}>{value || placeholder}</span>
+               <span className={classNames({ [css.placeholder]: !visibleValue })}>{visibleValue || placeholder}</span>
 
                <img
                   src={chevronDown}
