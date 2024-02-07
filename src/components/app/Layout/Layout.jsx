@@ -14,7 +14,7 @@ export const Layout = () => {
             <Link to={`/create?language=${language}`}>{locales.create}</Link>
 
             <a
-               href="https://github.com/kuscoder"
+               href="https://github.com/kuscoder/holy-valentine/"
                target="_blank"
                rel="noreferrer"
             >
